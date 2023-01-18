@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Truphone.Infrastructure;
 
@@ -15,38 +16,46 @@ namespace Truphone.Infrastructure.Migrations
         protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
-            modelBuilder.HasAnnotation("ProductVersion", "7.0.2");
+            modelBuilder
+                .HasAnnotation("ProductVersion", "7.0.2")
+                .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
-            modelBuilder.Entity("Truphone.Infrastructure.Brand", b =>
+            SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
+
+            modelBuilder.Entity("Truphone.Infrastructure.Models.Brand", b =>
                 {
                     b.Property<int>("BrandId")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("BrandId"));
 
                     b.Property<string>("BrandName")
                         .IsRequired()
-                        .HasColumnType("TEXT");
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("BrandId");
 
                     b.ToTable("Brands");
                 });
 
-            modelBuilder.Entity("Truphone.Infrastructure.Device", b =>
+            modelBuilder.Entity("Truphone.Infrastructure.Models.Device", b =>
                 {
                     b.Property<int>("DeviceId")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("DeviceId"));
 
                     b.Property<int>("BrandId")
-                        .HasColumnType("INTEGER");
+                        .HasColumnType("int");
 
                     b.Property<DateTime>("Created")
-                        .HasColumnType("TEXT");
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("DeviceName")
                         .IsRequired()
-                        .HasColumnType("TEXT");
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("DeviceId");
 
@@ -55,9 +64,9 @@ namespace Truphone.Infrastructure.Migrations
                     b.ToTable("Devices");
                 });
 
-            modelBuilder.Entity("Truphone.Infrastructure.Device", b =>
+            modelBuilder.Entity("Truphone.Infrastructure.Models.Device", b =>
                 {
-                    b.HasOne("Truphone.Infrastructure.Brand", "Brand")
+                    b.HasOne("Truphone.Infrastructure.Models.Brand", "Brand")
                         .WithMany("Devices")
                         .HasForeignKey("BrandId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -66,7 +75,7 @@ namespace Truphone.Infrastructure.Migrations
                     b.Navigation("Brand");
                 });
 
-            modelBuilder.Entity("Truphone.Infrastructure.Brand", b =>
+            modelBuilder.Entity("Truphone.Infrastructure.Models.Brand", b =>
                 {
                     b.Navigation("Devices");
                 });

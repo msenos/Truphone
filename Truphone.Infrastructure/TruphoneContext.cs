@@ -2,26 +2,26 @@
 using System;
 using System.Collections.Generic;
 using System.Reflection.Metadata;
+using Truphone.Infrastructure.Models;
 
 namespace Truphone.Infrastructure
 {
     public class TruphoneContext : DbContext
     {
+        public TruphoneContext(DbContextOptions<TruphoneContext> options) : base(options)
+        {
+            
+        }
+     
+
         public DbSet<Device> Devices { get; set; }
         public DbSet<Brand> Brands { get; set; }
 
-        public string DbPath { get; }
-
-        public TruphoneContext()
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            var folder = Environment.SpecialFolder.LocalApplicationData;
-            var path = Environment.GetFolderPath(folder);
-            DbPath = System.IO.Path.Join(path, "truphone.db");
+            modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
         }
-        // The following configures EF to create a Sqlite database file in the
-        // special "local" folder for your platform.
-        protected override void OnConfiguring(DbContextOptionsBuilder options)
-            => options.UseSqlite($"Data Source={DbPath}");
+
     }
 }
 

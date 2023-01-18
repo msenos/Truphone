@@ -1,4 +1,4 @@
-﻿namespace Truphone.Infrastructure
+﻿namespace Truphone.Infrastructure.Models
 {
     public class Device
     {

@@ -9,5 +9,6 @@ namespace Truphone.Application.Interfaces
     public interface ITruphoneService
     {
         List<Domain.Device> GetAllDevices();
+        Domain.Device GetDeviceby(int id);
     }
 }

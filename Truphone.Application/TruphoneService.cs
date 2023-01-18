@@ -19,5 +19,10 @@ namespace Truphone.Application
         {
             return this._repository.GetAllDevices();
         }
+
+        public Device GetDeviceby(int id)
+        {
+            return this._repository.GetDeviceBy(id);
+        }
     }
 }
