@@ -9,7 +9,11 @@ namespace Truphone.Application.Interfaces
 {
     public interface ITruphoneRepository
     {
-        List<DeviceDto> GetAllDevices();
-        DeviceDto GetDeviceBy(int id);
+        bool AddDevice(DeviceDto device);
+        DeviceDto GetDeviceById(int id);
+        IEnumerable<DeviceDto> GetAllDevices();
+        bool UpdateDevice(DeviceDto device);
+        bool DeleteDevice(int id);
+        IEnumerable<DeviceDto> GetDevicesByBrand(string brand);
     }
 }
