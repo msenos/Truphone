@@ -15,15 +15,40 @@ namespace Truphone.Application
         {
             this._repository = repository;
         }
-        public List<DeviceDto> GetAllDevices()
+
+        public bool AddDevice(DeviceDto device)
         {
-            var list = this._repository.GetAllDevices();
-            return null;
+            throw new NotImplementedException();
         }
 
         public DeviceDto GetDeviceby(int id)
         {
-            return this._repository.GetDeviceBy(id);
+            return this._repository.GetDeviceById(id);
+        }
+
+        public DeviceDto GetDeviceById(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        IEnumerable<DeviceDto> ITruphoneService.GetAllDevices()
+        {
+            var list = this._repository.GetAllDevices();
+            return null;
+        }
+        public bool UpdateDevice(DeviceDto device)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool DeleteDevice(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<DeviceDto> GetDevicesByBrand(string brand)
+        {
+            throw new NotImplementedException();
         }
     }
 }
