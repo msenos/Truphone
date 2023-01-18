@@ -15,12 +15,13 @@ namespace Truphone.Application
         {
             this._repository = repository;
         }
-        public List<Device> GetAllDevices()
+        public List<DeviceDto> GetAllDevices()
         {
-            return this._repository.GetAllDevices();
+            var list = this._repository.GetAllDevices();
+            return null;
         }
 
-        public Device GetDeviceby(int id)
+        public DeviceDto GetDeviceby(int id)
         {
             return this._repository.GetDeviceBy(id);
         }

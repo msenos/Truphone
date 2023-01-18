@@ -13,7 +13,6 @@ namespace Truphone.Infrastructure
             
         }
      
-
         public DbSet<Device> Devices { get; set; }
         public DbSet<Brand> Brands { get; set; }
 

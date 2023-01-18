@@ -15,17 +15,19 @@ namespace Truphone.Infrastructure
         {
             _context = context;
         }
-        public List<Domain.Device> GetAllDevices()
+        public List<DeviceDto> GetAllDevices()
         {
             var list = _context.Devices.ToList();
 
-            return new List<Domain.Device>();
+
+
+            return new List<DeviceDto>();
         }
 
-        public Device GetDeviceBy(int id)
+        public DeviceDto GetDeviceBy(int id)
         {
             var device = _context.Devices.FirstOrDefault(x => x.DeviceId.Equals(id));
-            return null;
+            return new DeviceDto();
         }
     }
 }

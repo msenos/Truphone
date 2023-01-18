@@ -7,14 +7,14 @@ using System.Threading.Tasks.Dataflow;
 
 namespace Truphone.Domain
 {
-    public class Device : BaseEntity
+    public class DeviceDto : BaseEntity
     {
         public string Name { get; set; } = string.Empty;
-        public Brand Brand { get; set; }
+        public BrandDto Brand { get; set; }
 
-        public Device()
+        public DeviceDto()
         {
-            Brand = new Brand();
+            Brand = new BrandDto();
         }
     }
 }

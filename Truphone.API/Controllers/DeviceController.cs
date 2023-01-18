@@ -20,16 +20,16 @@ namespace Truphone.API.Controllers
 
         [HttpGet]
         [Route("GetAllDevices")]
-        public IEnumerable<Device> GetAllDevices()
+        public IEnumerable<DeviceDto> GetAllDevices()
         {
-            return (IEnumerable<Device>)Ok(_service.GetAllDevices());
+            return Ok(_service.GetAllDevices());
         }
 
         [HttpGet]
         [Route("GetDevice/{id}")]
-        public IEnumerable<Device> GetDeviceBy(int id)
+        public IEnumerable<DeviceDto> GetDeviceBy(int id)
         {
-            return (IEnumerable<Device>)Ok(_service.GetDeviceby(id));
+            return (IEnumerable<DeviceDto>)Ok(_service.GetDeviceby(id));
         }
     }
 }
