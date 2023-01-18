@@ -27,16 +27,16 @@ namespace Truphone.API.Controllers
 
         [HttpGet]
         [Route("GetDevice/{id}")]
-        public IEnumerable<DeviceDto> GetDeviceById(int id)
+        public ActionResult<IEnumerable<DeviceDto>> GetDeviceById(int id)
         {
-            return (IEnumerable<DeviceDto>)Ok(_service.GetDeviceById(id));
+            return Ok(_service.GetDeviceById(id));
         }
 
         [HttpGet]
         [Route("GetAllDevices")]
-        public IEnumerable<DeviceDto> GetAllDevices()
+        public ActionResult<IEnumerable<DeviceDto>> GetAllDevices()
         {
-            return (IEnumerable<DeviceDto>)Ok(_service.GetAllDevices());
+            return Ok(_service.GetAllDevices());
         }
 
         [HttpPost]
@@ -55,5 +55,18 @@ namespace Truphone.API.Controllers
 
         }
 
+        [HttpDelete]
+        [Route("DeleteDevice/{id}")]
+        public ActionResult<bool> DeleteDevice(int id)
+        {
+            return Ok(_service.DeleteDevice(id));
+        }
+
+        [HttpGet]
+        [Route("SearchDeviceByBrand/{name}")]
+        public ActionResult<IEnumerable<DeviceDto>> SearchDeviceByName(string name)
+        {
+            return Ok(_service.GetDevicesByBrand(name));
+        }
     }
 }
