@@ -18,18 +18,42 @@ namespace Truphone.API.Controllers
             _logger = logger;
         }
 
+        [HttpPost]
+        [Route("AddDevice")]
+        public ActionResult<bool> AddDevice(DeviceDto device)
+        {
+            return Ok(_service.AddDevice(device));
+        } 
+
+        [HttpGet]
+        [Route("GetDevice/{id}")]
+        public IEnumerable<DeviceDto> GetDeviceById(int id)
+        {
+            return (IEnumerable<DeviceDto>)Ok(_service.GetDeviceById(id));
+        }
+
         [HttpGet]
         [Route("GetAllDevices")]
         public IEnumerable<DeviceDto> GetAllDevices()
         {
-            return Ok(_service.GetAllDevices());
+            return (IEnumerable<DeviceDto>)Ok(_service.GetAllDevices());
         }
 
-        [HttpGet]
-        [Route("GetDevice/{id}")]
-        public IEnumerable<DeviceDto> GetDeviceBy(int id)
+        [HttpPost]
+        [Route("UpdateDevice/{id}")]
+        public ActionResult<bool> UpdateDevice(int id, DeviceDto device) 
         {
-            return (IEnumerable<DeviceDto>)Ok(_service.GetDeviceby(id));
+            return Ok(_service.UpdateDevice(id, device));
+        
         }
+
+        [HttpPatch]
+        [Route("UpdateDevicePartial/{id}")]
+        public ActionResult<bool> UpdateDevicePartial(int id, DeviceDto device)
+        {
+            return Ok(_service.UpdateDevice(id, device));
+
+        }
+
     }
 }

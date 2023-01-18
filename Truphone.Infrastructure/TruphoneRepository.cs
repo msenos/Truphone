@@ -15,7 +15,17 @@ namespace Truphone.Infrastructure
         {
             _context = context;
         }
-        public List<DeviceDto> GetAllDevices()
+
+        public bool AddDevice(DeviceDto device)
+        {
+            throw new NotImplementedException();
+        }
+        public DeviceDto GetDeviceById(int id)
+        {
+            var device = _context.Devices.FirstOrDefault(x => x.DeviceId.Equals(id));
+            return new DeviceDto();
+        }
+        public IEnumerable<DeviceDto> GetAllDevices()
         {
             var list = _context.Devices.ToList();
 
@@ -23,11 +33,19 @@ namespace Truphone.Infrastructure
 
             return new List<DeviceDto>();
         }
-
-        public DeviceDto GetDeviceBy(int id)
+        public bool UpdateDevice(int id, DeviceDto device)
         {
-            var device = _context.Devices.FirstOrDefault(x => x.DeviceId.Equals(id));
-            return new DeviceDto();
+            throw new NotImplementedException();
+        }
+
+        public bool DeleteDevice(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<DeviceDto> GetDevicesByBrand(string brand)
+        {
+            throw new NotImplementedException();
         }
     }
 }
