@@ -26,7 +26,7 @@ namespace Truphone.API.Controllers
         } 
 
         [HttpGet]
-        [Route("GetDevice/{id}")]
+        [Route("GetDeviceById/{id}")]
         public ActionResult<IEnumerable<DeviceDto>> GetDeviceById(int id)
         {
             return Ok(_service.GetDeviceById(id));

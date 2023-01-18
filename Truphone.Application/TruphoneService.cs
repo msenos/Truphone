@@ -21,22 +21,17 @@ namespace Truphone.Application
             throw new NotImplementedException();
         }
 
-        public DeviceDto GetDeviceby(int id)
+        public DeviceDto GetDeviceById(int id)
         {
             return this._repository.GetDeviceById(id);
         }
 
-        public DeviceDto GetDeviceById(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        IEnumerable<DeviceDto> ITruphoneService.GetAllDevices()
+        public IEnumerable<DeviceDto> GetAllDevices()
         {
             var list = this._repository.GetAllDevices();
             return null;
         }
-        public bool UpdateDevice(DeviceDto device)
+        public bool UpdateDevice(int id, DeviceDto device)
         {
             throw new NotImplementedException();
         }
