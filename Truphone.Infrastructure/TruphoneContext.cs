@@ -17,10 +17,7 @@ namespace Truphone.Infrastructure
         public DbSet<Device> Devices { get; set; }
         public DbSet<Brand> Brands { get; set; }
 
-        protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        {
-            modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
-        }
+        
 
     }
 }
