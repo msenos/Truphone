@@ -10,11 +10,16 @@ namespace Truphone.Domain
     public class DeviceDto : BaseEntity
     {
         public string Name { get; set; } = string.Empty;
-        public BrandDto Brand { get; set; }
+        public string Brand { get; set; } = string.Empty;
 
         public DeviceDto()
         {
-            Brand = new BrandDto();
+        }
+        public DeviceDto(string name, string brand)
+        {
+            Name = name;
+            Brand = brand;
+            Created = DateTime.Now;
         }
     }
 }

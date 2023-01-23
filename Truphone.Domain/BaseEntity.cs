@@ -9,6 +9,6 @@ namespace Truphone.Domain
     public class BaseEntity
     {
         public int Id { get; set; }
-        public DateTime Creted { get; set; } = DateTime.Now;
+        public DateTime Created { get; set; } = DateTime.Now;
     }
 }

@@ -19,10 +19,10 @@ namespace Truphone.API.Controllers
         }
 
         [HttpPost]
-        [Route("AddDevice")]
-        public ActionResult<bool> AddDevice(DeviceDto device)
+        [Route("AddDevice/{name}/{brand}")]
+        public ActionResult<bool> AddDevice(string name, string brand)
         {
-            return Ok(_service.AddDevice(device));
+            return Ok(_service.AddDevice(new DeviceDto(name, brand)));
         } 
 
         [HttpGet]

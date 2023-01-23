@@ -13,37 +13,36 @@ namespace Truphone.Application
         private readonly ITruphoneRepository _repository;
         public TruphoneService(ITruphoneRepository repository)
         {
-            this._repository = repository;
+            _repository = repository;
         }
 
         public bool AddDevice(DeviceDto device)
         {
-            throw new NotImplementedException();
+            return _repository.AddDevice(device);
         }
 
         public DeviceDto GetDeviceById(int id)
         {
-            return this._repository.GetDeviceById(id);
+            return _repository.GetDeviceById(id);
         }
 
         public IEnumerable<DeviceDto> GetAllDevices()
         {
-            var list = this._repository.GetAllDevices();
-            return null;
+            return _repository.GetAllDevices();
         }
         public bool UpdateDevice(int id, DeviceDto device)
         {
-            throw new NotImplementedException();
+            return _repository.UpdateDevice(id, device);
         }
 
         public bool DeleteDevice(int id)
         {
-            throw new NotImplementedException();
+            return _repository.DeleteDevice(id);
         }
 
         public IEnumerable<DeviceDto> GetDevicesByBrand(string brand)
         {
-            throw new NotImplementedException();
+            return _repository.GetDevicesByBrand(brand);
         }
     }
 }
