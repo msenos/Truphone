@@ -48,10 +48,10 @@ namespace Truphone.API.Controllers
         }
 
         [HttpPatch]
-        [Route("UpdateDevicePartial/{id}")]
-        public ActionResult<bool> UpdateDevicePartial(int id, DeviceDto device)
+        [Route("PatchDevice/{id}")]
+        public ActionResult<bool> PatchDevice(int id, DeviceDto device)
         {
-            return Ok(_service.UpdateDevice(id, device));
+            return Ok(_service.PatchDevice(id, device));
 
         }
 

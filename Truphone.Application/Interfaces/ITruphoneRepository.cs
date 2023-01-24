@@ -13,6 +13,7 @@ namespace Truphone.Application.Interfaces
         DeviceDto GetDeviceById(int id);
         IEnumerable<DeviceDto> GetAllDevices();
         bool UpdateDevice(int id, DeviceDto device);
+        bool PatchDevice(int id, DeviceDto device);
         bool DeleteDevice(int id);
         IEnumerable<DeviceDto> GetDevicesByBrand(string brand);
     }

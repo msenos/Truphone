@@ -34,6 +34,10 @@ namespace Truphone.Application
         {
             return _repository.UpdateDevice(id, device);
         }
+        public bool PatchDevice(int id, DeviceDto device)
+        {
+            return _repository.PatchDevice(id, device);
+        }
 
         public bool DeleteDevice(int id)
         {
@@ -44,5 +48,6 @@ namespace Truphone.Application
         {
             return _repository.GetDevicesByBrand(brand);
         }
+
     }
 }

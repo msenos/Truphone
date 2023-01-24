@@ -59,17 +59,30 @@ namespace Truphone.Infrastructure
             var res = false;
             if (_context.Devices.Any(x => x.DeviceId == id))
             {
-                var model = _context.Devices.First(x => x.DeviceId == id);
+                var modelDb = _context.Devices.First(x => x.DeviceId == id);
 
                 var brandId = GetBrandIdByName(device.Brand);
-                model.DeviceName = device.Name;
-                model.BrandId = brandId;
-                _context.Update(model);
+                modelDb.DeviceName = device.Name;
+                modelDb.BrandId = brandId;
+                _context.Update(modelDb);
                 _context.SaveChanges();
 
                 res = true;
             }
             return res;
+        }
+        public bool PatchDevice(int id, DeviceDto device)
+        {
+            throw new NotImplementedException();
+            //var res = false;
+
+            //if (_context.Devices.Any(_x => _x.DeviceId == id))
+            //{
+            //    var modelDb = _context.Devices.First(y => y.DeviceId == id);
+            //    res = true;
+            //}
+
+            //return res;
         }
 
         public bool DeleteDevice(int id)
@@ -129,5 +142,6 @@ namespace Truphone.Infrastructure
             var id = _context.Brands.First(x => x.BrandName.Equals(brandName)).BrandId;
             return id;
         }
+
     }
 }
