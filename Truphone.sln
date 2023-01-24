@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Truphone.Domain", "Truphone.Domain\Truphone.Domain.csproj", "{80A7C45C-834B-4891-A3DA-507C181B41FB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Truphone.Domain", "Truphone.Domain\Truphone.Domain.csproj", "{80A7C45C-834B-4891-A3DA-507C181B41FB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Truphone.Application", "Truphone.Application\Truphone.Application.csproj", "{BC3F922E-DA42-4E61-B2B1-2889A41217AC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Truphone.Application", "Truphone.Application\Truphone.Application.csproj", "{BC3F922E-DA42-4E61-B2B1-2889A41217AC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Truphone.Infrastructure", "Truphone.Infrastructure\Truphone.Infrastructure.csproj", "{6DED1F30-3C7B-45AF-8DCE-EA1D0ACC29C0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Truphone.Infrastructure", "Truphone.Infrastructure\Truphone.Infrastructure.csproj", "{6DED1F30-3C7B-45AF-8DCE-EA1D0ACC29C0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Truphone.API", "Truphone.API\Truphone.API.csproj", "{D12AE2F2-9F39-4FDA-9DEE-3912567AEDBE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Truphone.API", "Truphone.API\Truphone.API.csproj", "{D12AE2F2-9F39-4FDA-9DEE-3912567AEDBE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Truphone.API.Tests", "Truphone.API.Tests\Truphone.API.Tests.csproj", "{BE719DDC-7F18-40D7-8FD8-AF5BE3FADF82}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{D12AE2F2-9F39-4FDA-9DEE-3912567AEDBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D12AE2F2-9F39-4FDA-9DEE-3912567AEDBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D12AE2F2-9F39-4FDA-9DEE-3912567AEDBE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE719DDC-7F18-40D7-8FD8-AF5BE3FADF82}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE719DDC-7F18-40D7-8FD8-AF5BE3FADF82}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE719DDC-7F18-40D7-8FD8-AF5BE3FADF82}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE719DDC-7F18-40D7-8FD8-AF5BE3FADF82}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
