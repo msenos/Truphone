@@ -18,7 +18,8 @@ namespace Truphone.Application
 
         public bool AddDevice(DeviceDto device)
         {
-            return _repository.AddDevice(device);
+            var r = _repository.AddDevice(device);
+            return r;
         }
 
         public DeviceDto GetDeviceById(int id)
